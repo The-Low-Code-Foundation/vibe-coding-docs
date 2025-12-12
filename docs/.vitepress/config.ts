@@ -1,0 +1,136 @@
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  title: 'Vibe Coding Guide',
+  description: 'Build production-ready apps with AI—without wasting money',
+  
+  cleanUrls: true,
+  lastUpdated: true,
+  
+  head: [
+    ['meta', { name: 'theme-color', content: '#5f67ee' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'Vibe Coding Guide' }],
+    ['meta', { property: 'og:description', content: 'Build production-ready apps with AI—without wasting money' }],
+  ],
+
+  themeConfig: {
+    siteTitle: 'Vibe Coding Guide',
+    
+    nav: [
+      { text: 'Guide', link: '/introduction' },
+      { text: 'Templates', link: '/part-6/templates' },
+      {
+        text: 'Resources',
+        items: [
+          { text: 'Prompt Library', link: '/part-6/prompts' },
+          { text: 'Case Studies', link: '/part-6/case-studies' },
+          { text: 'Setup Guide', link: '/part-6/setup-guide' },
+        ]
+      },
+      { text: 'About', link: '/about' }
+    ],
+
+    sidebar: [
+      {
+        text: 'Getting Started',
+        items: [
+          { text: 'Introduction', link: '/introduction' },
+        ]
+      },
+      {
+        text: 'Part I: Foundation',
+        collapsed: false,
+        items: [
+          { text: 'Philosophy & Approach', link: '/part-1/philosophy' },
+          { text: 'Tool Selection', link: '/part-1/tool-selection' },
+        ]
+      },
+      {
+        text: 'Part II: Pre-Development',
+        collapsed: false,
+        items: [
+          { text: 'The Brainstorming Session', link: '/part-2/brainstorming' },
+          { text: 'Documentation Architecture', link: '/part-2/documentation-architecture' },
+        ]
+      },
+      {
+        text: 'Part III: Execution',
+        collapsed: false,
+        items: [
+          { text: 'The Cline Workflow', link: '/part-3/cline-workflow' },
+          { text: 'Task Documentation', link: '/part-3/task-patterns' },
+          { text: 'Confidence Scoring', link: '/part-3/confidence-scoring' },
+        ]
+      },
+      {
+        text: 'Part IV: Quality Assurance',
+        collapsed: false,
+        items: [
+          { text: 'Phase Audits', link: '/part-4/phase-audits' },
+          { text: 'Commenting Philosophy', link: '/part-4/commenting-philosophy' },
+        ]
+      },
+      {
+        text: 'Part V: Advanced Topics',
+        collapsed: true,
+        items: [
+          { text: 'Context Management', link: '/part-5/context-management' },
+          { text: 'Common Pitfalls', link: '/part-5/pitfalls-recovery' },
+          { text: 'Team Workflows', link: '/part-5/team-workflows' },
+        ]
+      },
+      {
+        text: 'Part VI: Resources',
+        collapsed: true,
+        items: [
+          { text: 'Templates', link: '/part-6/templates' },
+          { text: 'Prompts', link: '/part-6/prompts' },
+          { text: 'Case Studies', link: '/part-6/case-studies' },
+          { text: 'Setup Guide', link: '/part-6/setup-guide' },
+        ]
+      },
+      {
+        text: 'Appendices',
+        collapsed: true,
+        items: [
+          { text: 'Beyond Coding', link: '/appendix-e-beyond-coding' },
+          { text: 'About', link: '/about' },
+        ]
+      }
+    ],
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/The-Low-Code-Foundation/vibe-coding-docs' }
+    ],
+
+    footer: {
+      message: 'A collaboration between <a href="https://lowcode.foundation">The Low Code Foundation</a> and <a href="https://visualhive.co">Visual Hive</a>',
+      copyright: '© 2024 | Author: Richard Osborne, CTO of Visual Hive'
+    },
+
+    search: {
+      provider: 'local'
+    },
+
+    outline: {
+      level: [2, 3],
+      label: 'On this page'
+    },
+
+    lastUpdated: {
+      text: 'Last updated',
+      formatOptions: {
+        dateStyle: 'medium'
+      }
+    }
+  },
+
+  markdown: {
+    lineNumbers: false,
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark'
+    }
+  }
+})
