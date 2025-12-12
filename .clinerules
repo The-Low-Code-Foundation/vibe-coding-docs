@@ -1,0 +1,439 @@
+# CLAUDE RULES - Vibe Coding Guide Documentation Project
+
+These rules guide AI development of the Vibe Coding Guide documentation.
+
+---
+
+## Project Context
+
+**What:** Comprehensive guide to AI-assisted full-stack development
+**Goal:** Document proven methodology for building production-ready apps with AI
+**Audience:** Developers, founders, CTOs, technical leaders
+**Style:** Professional but accessible, practical not theoretical
+**Example:** RISE project (github.com/The-Low-Code-Foundation/rise)
+
+---
+
+## Documentation Standards
+
+### 1. Chapter Structure (REQUIRED)
+
+Every chapter MUST have:
+
+```markdown
+---
+title: Chapter Title
+description: One-sentence chapter description
+---
+
+# Chapter Title
+
+## TLDR
+
+[2-3 paragraphs max covering:
+- What this chapter covers
+- Why it matters
+- Key takeaways
+- Estimated time/effort if applicable]
+
+---
+
+## [Main Section 1]
+
+[Content...]
+
+## [Main Section 2]
+
+[Content...]
+
+---
+
+::: tip [Optional Callout]
+[Practical tip or key insight]
+:::
+```
+
+### 2. TLDR Requirements
+
+Every TLDR must be:
+- **Scannable:** Bullet points or short paragraphs
+- **Complete:** Someone reading only TLDRs understands methodology
+- **Actionable:** Clear what reader should do
+- **Concise:** 200 words maximum
+
+### 3. Writing Style
+
+**DO:**
+- ✅ Use "you" and "we" (conversational)
+- ✅ Include real examples from RISE or other projects
+- ✅ Provide copy-paste templates
+- ✅ Explain WHY not just HOW
+- ✅ Use code blocks for prompts, configs, examples
+- ✅ Cross-reference other chapters
+- ✅ Include cost/time estimates where relevant
+
+**DON'T:**
+- ❌ Use passive voice excessively
+- ❌ Write academic/theoretical content without examples
+- ❌ Create examples that don't work
+- ❌ Assume reader knows context
+- ❌ Skip the "why this matters" explanation
+- ❌ Make claims without evidence
+
+### 4. Examples Requirements
+
+Every example must:
+- Be **real** (from RISE or actual projects) OR clearly labeled as hypothetical
+- Be **complete** (enough context to understand)
+- Be **testable** (prompts actually work, code actually runs)
+- Include **commentary** (explain what's happening)
+
+**Format for conversation examples:**
+```markdown
+**You say:**
+```
+[Your prompt]
+```
+
+**AI responds:**
+```
+[AI response with thinking shown if relevant]
+```
+
+**Why this works:**
+[Explanation of the pattern]
+```
+
+### 5. Template Requirements
+
+Every template must:
+- Have `[PLACEHOLDERS]` for customization
+- Include comments explaining each section
+- Actually work when filled in
+- Include example of filled-in version
+
+**Format:**
+```markdown
+### Template: [Name]
+
+**Purpose:** [What this is for]
+
+**Template:**
+``` ```markdown
+# [PROJECT_NAME]
+
+## Overview
+[Description of what this project does]
+
+## [More sections with placeholders]
+``` ```
+
+**Example (filled in):**
+``` ```markdown
+# RISE
+
+## Overview
+Desktop application for low-code AI-assisted development...
+``` ```
+```
+
+### 6. Cross-References
+
+When referencing other chapters:
+```markdown
+See [Chapter Name](/path/to/chapter) for details on...
+
+As discussed in [Philosophy & Approach](/part-1/philosophy)...
+
+We'll cover this more in [The Cline Workflow](/part-3/cline-workflow).
+```
+
+Always use relative paths, always link first mention of related topic.
+
+---
+
+## Content Verification Checklist
+
+Before marking task complete, verify:
+
+### For Each Chapter:
+- [ ] TLDR present and complete
+- [ ] All sections from outline covered
+- [ ] 2+ real examples included
+- [ ] Templates provided (if applicable)
+- [ ] Cross-references valid
+- [ ] Code blocks formatted correctly
+- [ ] Markdown linting passes
+- [ ] Frontmatter present and correct
+
+### For Examples:
+- [ ] Prompts actually work (test them)
+- [ ] Code examples run without errors
+- [ ] Real project examples accurate
+- [ ] Commentary explains the pattern
+
+### For Templates:
+- [ ] Placeholders clearly marked
+- [ ] Comments explain each section
+- [ ] Example provided
+- [ ] Template is complete (not missing critical sections)
+
+---
+
+## Confidence Scoring for Documentation Tasks
+
+### 9/10 Required (Critical Chapters):
+- Chapter 3 (Brainstorming)
+- Chapter 4 (Documentation Architecture)
+- Chapter 5 (Cline Workflow)
+- Chapter 7 (Confidence Scoring)
+- Chapter 8 (Phase Audits)
+- Chapter 13 (Templates)
+- Chapter 17 (Site Setup)
+
+**Criteria for 9/10:**
+- ✅ All outline sections covered completely
+- ✅ Real examples tested and working
+- ✅ Templates complete and functional
+- ✅ Cross-references all valid
+- ✅ No TODO or placeholder text
+- ✅ Consistent with existing chapters
+- ✅ Technical accuracy verified
+
+### 8/10 Required (Important Chapters):
+- All other Part II, III, IV chapters
+- Chapter 14-15 (Prompts, Case Studies)
+
+**Criteria for 8/10:**
+- ✅ All major outline points covered
+- ✅ Key examples included
+- ✅ Templates present (if applicable)
+- ✅ Technically accurate
+- ✅ Some minor TODOs acceptable
+
+### 7/10 Acceptable (Supporting Content):
+- Chapter 10-12 (Advanced Topics)
+- Appendices
+
+**Criteria for 7/10:**
+- ✅ Core content present
+- ✅ At least one example per section
+- ✅ Technically accurate
+- ✅ TODOs for future enhancement okay
+
+---
+
+## Technical Accuracy Requirements
+
+### Cost Estimates
+- Sonnet 4.5: $3 input / $15 output per million tokens
+- Opus 4: $15 input / $75 output per million tokens
+- Typical task: 10,000-30,000 tokens
+- MVP project: $200-$500
+
+**Always include:**
+- Token estimate
+- Cost range
+- Timeline estimate
+
+### Model References
+- Current: Claude Sonnet 4.5, Claude Opus 4
+- Model IDs: claude-sonnet-4-20250514, claude-opus-4-20250514
+- Mention extended thinking explicitly
+- Context window: 200k tokens
+
+### Tool References
+- Cline (VS Code extension)
+- Claude Code (terminal tool)
+- Claude web interface (claude.ai)
+
+**Be specific about versions and features.**
+
+---
+
+## When to Ask Human for Help
+
+### Automatic Human Review Needed:
+
+1. **Can't find information in existing chapters/outline**
+   - Don't make up examples
+   - Ask for clarification or real examples
+
+2. **Technical accuracy uncertain**
+   - Cost calculations
+   - Model capabilities
+   - Tool features
+
+3. **Template doesn't seem complete**
+   - Ask if all sections covered
+   - Verify against real project structure
+
+4. **Example doesn't work**
+   - Prompt doesn't produce expected output
+   - Code has errors
+   - Template has gaps
+
+5. **Confidence score < target**
+   - Explain what's missing
+   - Ask for guidance on fixes
+
+### How to Ask:
+
+```markdown
+## Human Review Needed
+
+I've completed [X] but need verification on:
+
+1. [Specific question with context]
+2. [Another specific question]
+
+Current confidence: 7/10
+Target: 8/10
+Gap: [Explanation of what would get to 8/10]
+
+Please review and provide guidance.
+```
+
+---
+
+## File Organization
+
+### Current Structure:
+```
+/tmp/vibe-coding-guide/
+├── docs/
+│   ├── index.md (homepage)
+│   ├── introduction.md
+│   ├── part-1/
+│   │   ├── philosophy.md ✅
+│   │   └── tool-selection.md ✅
+│   ├── part-2/
+│   │   ├── brainstorming.md (in progress)
+│   │   └── documentation-architecture.md (next)
+│   ├── part-3/
+│   ├── part-4/
+│   ├── part-5/
+│   └── part-6/
+├── templates/ (to be created)
+├── COMPLETE_OUTLINE.md
+├── META-ROADMAP.md
+└── CLAUDE_RULES.md (this file)
+```
+
+### Naming Conventions:
+- Files: lowercase-with-dashes.md
+- Directories: part-1, part-2, etc.
+- No spaces in filenames
+- Descriptive names (not chapter-1, chapter-2)
+
+---
+
+## Git Commit Messages
+
+**Format:**
+```
+[Component] Action: Description
+
+Examples:
+[Part 2] Complete: Brainstorming chapter with examples
+[Templates] Add: Core document templates
+[Part 3] Draft: Cline workflow chapter
+[Fix] Update: Cross-references in philosophy chapter
+[Meta] Add: CLAUDE_RULES for project
+```
+
+**Components:**
+- Part 1-6
+- Templates
+- Config  
+- Meta
+- Fix
+
+**Actions:**
+- Complete
+- Draft
+- Add
+- Update
+- Fix
+
+---
+
+## Quality Gates
+
+### Phase Completion Requirements:
+
+**Phase 2 (Pre-Development Content):**
+- [ ] Chapter 3 (Brainstorming): 9/10
+- [ ] Chapter 4 (Documentation Architecture): 9/10
+- [ ] All templates created and tested
+- [ ] Examples from RISE included
+- [ ] Cross-references valid
+
+**Phase 3 (Execution Content):**
+- [ ] Chapter 5 (Cline Workflow): 9/10
+- [ ] Chapter 6 (Task Patterns): 8/10
+- [ ] Chapter 7 (Confidence Scoring): 9/10
+- [ ] Real conversation transcripts included
+- [ ] All workflows documented
+
+**Phase 4 (Quality Assurance Content):**
+- [ ] Chapter 8 (Phase Audits): 9/10
+- [ ] Chapter 9 (Commenting): 8/10
+- [ ] Real audit examples included
+- [ ] Before/after code samples
+
+**Phase 5 (Advanced Content):**
+- [ ] All chapters: 7-8/10 minimum
+- [ ] Complete but can have TODOs
+- [ ] Technically accurate
+
+**Phase 6 (Resources):**
+- [ ] Chapter 13 (Templates): 9/10 ← Critical
+- [ ] Chapter 14-16: 8/10
+- [ ] Chapter 17 (Site Setup): 9/10 ← Critical
+- [ ] All templates tested
+- [ ] All prompts verified
+
+**Phase 7 (Deployment):**
+- [ ] Site builds successfully
+- [ ] All navigation works
+- [ ] All links valid
+- [ ] Mobile responsive
+- [ ] Search works (if enabled)
+- [ ] 10/10 (works or doesn't)
+
+---
+
+## Final Notes
+
+**This is a living guide about AI-assisted development, being created with AI-assisted development.**
+
+The irony is intentional. The meta-ness is feature, not bug.
+
+If something in this methodology doesn't work while building this documentation, that's a sign to revise the methodology.
+
+**Trust the process. It works.**
+
+---
+
+## Current Status
+
+**Phase:** 2 (Pre-Development Content)
+**Current Task:** 2.1 (Complete Brainstorming Chapter)
+**Next Task:** 2.2 (Documentation Architecture)
+
+**Completed:**
+- ✅ Phase 1: Foundation content
+- ✅ Homepage and introduction
+- ✅ Part I chapters (Philosophy, Tool Selection)
+
+**In Progress:**
+- 🔄 Part II Chapter 3 (Brainstorming)
+
+**Next Up:**
+- Part II Chapter 4 (Documentation Architecture)
+- Template library creation
+
+---
+
+*These rules will evolve as we learn from building this documentation. Update as needed.*
