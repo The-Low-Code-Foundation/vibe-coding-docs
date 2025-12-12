@@ -105,8 +105,8 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'A collaboration between <a href="https://lowcode.foundation">The Low Code Foundation</a> and <a href="https://visualhive.co">Visual Hive</a>',
-      copyright: '© 2024 | Author: Richard Osborne, CTO of Visual Hive'
+      message: 'A collaboration between <a href="https://thelowcodefoundation.com">The Low Code Foundation</a> and <a href="https://visualhive.co">Visual Hive</a>',
+      copyright: '© 2026 | Author: Richard Osborne, CTO of Visual Hive'
     },
 
     search: {
