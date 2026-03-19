@@ -195,6 +195,52 @@ The methodology feels like overhead—until you skip it and watch a project fall
 
 ---
 
+## OpsNest Conference Sync: Desktop Integration Tool
+
+**Project:** Electron app syncing Monday.com, Google Sheets, and Outlook with AI analysis
+**Complexity:** High (4 API integrations, OAuth, bi-directional sync, AI classification)
+**User:** Non-technical conference operations manager
+**Result:** Phase 1 scaffold complete — auth, IPC bridge, onboarding wizard, all service integrations
+
+### The Problem
+
+Conference operations managers juggle three disconnected tools:
+- Monday.com for task tracking
+- Google Sheets as the equipment source of truth
+- Outlook for vendor communications
+
+Every change requires manually updating all three systems. Multiply one chair order by hundreds of equipment items across dozens of event areas and you get the picture.
+
+### What Made It Work
+
+**1. "Download and double-click" drove every architecture decision**
+
+The user has no technical skills and no IT department. This ruled out hosted solutions, terminal commands, and any setup requiring developer consoles. Electron was the only choice that delivers a true double-click experience with OAuth handled internally.
+
+**2. Service Account eliminated the hardest UX problem**
+
+Google OAuth requires users to visit Google Cloud Console — a non-starter. Instead, the app bundles a Service Account. The user just shares their Google Sheet with an email address, exactly like sharing with a colleague. Zero technical setup.
+
+**3. AI-in-the-loop, not AI-in-charge**
+
+Claude classifies vendor emails and drafts replies, but the user always reviews before sending. Escalations flag issues without taking action. This builds trust with non-technical users who are wary of automation making decisions for them.
+
+**4. Source-of-truth rules prevent sync chaos**
+
+Instead of "last write wins" (confusing), clear rules: Google Sheets wins for quantities, Monday wins for task status. Everything else escalates to the user. Simple, predictable, no surprises.
+
+### Numbers
+
+| Metric | Value |
+|--------|-------|
+| Integrations | 4 (Monday, Sheets, Outlook, Claude) |
+| Auth flows | API keys (2) + Service Account + OAuth PKCE |
+| Sync model | Poll-and-reconcile (2-minute interval) |
+| Data model | 8 SQLite tables + sync journal |
+| Phase 1 files | 35 files, ~1,200 lines |
+
+---
+
 ## Patterns Across Projects
 
 **What consistently works:**
